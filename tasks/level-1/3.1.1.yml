@@ -17,8 +17,8 @@
 - name: 3.1.1 - Ensure IP forwarding is disabled in active kernel parameters
   command: "{{ item }}"
   with_items:
-    - "sysctl -w net.ipv4.ip_forward=0"
-    - "sysctl -w net.ipv4.route.flush=1"
+    - "/sbin/sysctl -w net.ipv4.ip_forward=0"
+    - "/sbin/sysctl -w net.ipv4.route.flush=1"
   tags:
     - level-1
     - section-3

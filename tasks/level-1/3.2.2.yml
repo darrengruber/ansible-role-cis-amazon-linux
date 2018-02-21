@@ -21,9 +21,9 @@
 - name: 3.2.2 - Ensure ICMP redirects are not accepted by active kernel parameters
   command: "{{ item }}"
   with_items:
-    - "sysctl -w net.ipv4.conf.all.accept_redirects=0"
-    - "sysctl -w net.ipv4.conf.default.accept_redirects=0"
-    - "sysctl -w net.ipv4.route.flush=1"
+    - "/sbin/sysctl -w net.ipv4.conf.all.accept_redirects=0"
+    - "/sbin/sysctl -w net.ipv4.conf.default.accept_redirects=0"
+    - "/sbin/sysctl -w net.ipv4.route.flush=1"
   tags:
     - level-1
     - section-3
